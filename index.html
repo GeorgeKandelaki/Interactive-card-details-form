@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <title>Frontend Mentor | Interactive card details form</title>
+
+        <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+        <style>
+            .attribution {
+                font-size: 11px;
+                text-align: center;
+                display: none;
+            }
+            .attribution a {
+                color: hsl(228, 45%, 44%);
+            }
+        </style>
+        <script defer src="index.js"></script>
+    </head>
+    <body>
+        <main class="main-frame">
+            <div class="image--container">
+                <img
+                    src="images/bg-main-desktop.png"
+                    class="bg--img"
+                    alt="image of an card"
+                />
+
+                <div class="images">
+                    <div class="card--content">
+                        <div class="content">
+                            <div>
+                                <img
+                                    src="images/card-logo.svg"
+                                    alt="image of an card"
+                                />
+                            </div>
+                            <div class="card--img--details">
+                                <span class="img--number">
+                                    0000 0000 0000 0000</span
+                                >
+                                <div>
+                                    <span class="img--name"
+                                        >Jane Appleseed</span
+                                    >
+                                    <span class="img--exp">
+                                        <span class="img--mm">00</span> /
+                                        <span class="img--yy"> 00</span></span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <img
+                            src="images/bg-card-front.png"
+                            class="card--front"
+                            alt="image of an card"
+                        />
+                    </div>
+
+                    <img
+                        src="images/bg-card-back.png"
+                        class="card--back"
+                        alt="image of an card"
+                    />
+                </div>
+            </div>
+
+            <div class="card-details">
+                <form class="form active">
+                    <div class="input--container">
+                        <label for="name">Cardholder Name</label>
+                        <input
+                            name="name"
+                            class="input input__name"
+                            placeholder="e.g. Jane Appleseed"
+                            type="text"
+                        />
+                        <label
+                            for="name"
+                            class="error-label error-label-name"
+                        ></label>
+                    </div>
+                    <div class="input--container">
+                        <label for="number">Card Number</label>
+                        <input
+                            name="number"
+                            class="input input__number"
+                            placeholder="e.g. 1234 5678 9123 0000 "
+                            type="number"
+                        />
+                        <label
+                            for="number"
+                            class="error-label error-label-card"
+                        ></label>
+                    </div>
+
+                    <div class="input--container mm-yy">
+                        <div class="exp">
+                            <label for="mm-yy--inputs" class="label--exp"
+                                >Exp. Date (MM/YY)</label
+                            >
+                            <div class="mm-yy--inputs">
+                                <input
+                                    name="mm"
+                                    class="input input__mm"
+                                    placeholder="MM"
+                                    type="number"
+                                />
+                                <input
+                                    name="yy"
+                                    class="input input__yy"
+                                    placeholder="YY"
+                                    type="number"
+                                />
+                            </div>
+                            <label
+                                class="error-label error-label-mm-yy"
+                            ></label>
+                        </div>
+
+                        <div class="input--container cvc--container">
+                            <label for="cvc">CVC</label>
+                            <input
+                                name="cvc"
+                                class="input input__cvc"
+                                placeholder="e.g. 123"
+                                type="number"
+                            />
+                            <label
+                                for="cvc"
+                                class="error-label error-label-cvc"
+                            ></label>
+                        </div>
+                    </div>
+
+                    <button class="btn--confirm">Confirm</button>
+                </form>
+
+                <div class="complete">
+                    <img
+                        src="images/icon-complete.svg"
+                        alt="image of an successfull credit card stealing attempt :)"
+                    />
+                    <h2 class="thanks--message">Thank you!</h2>
+                    <p class="description">We've added your card details</p>
+                    <button class="btn--continue margin-top-md">
+                        Continue
+                    </button>
+                </div>
+            </div>
+            <!-- Completed state start -->
+        </main>
+
+        <div class="attribution">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded by <a href="#">Your Name Here</a>.
+        </div>
+    </body>
+</html>

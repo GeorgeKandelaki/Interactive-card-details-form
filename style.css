@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+
+:root {
+    --red: hsl(0, 100%, 66%);
+    --violet: hsl(278, 68%, 11%);
+    --gray-violet: hsl(279, 6%, 55%);
+    --ligth-gray-violet: hsl(270, 3%, 87%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.8rem;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.main-frame {
+    min-height: 100vh;
+    display: flex;
+    gap: 30%;
+}
+
+/* /////////////////////////////////////// */
+/* REUSABLE CSS RULES  */
+/* /////////////////////////////////////// */
+
+.margin-top-md {
+    margin-top: 2.4rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.input {
+    outline: none;
+    padding: 2rem;
+    font-size: 1.8rem;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.input,
+.btn--confirm,
+.btn--continue {
+    height: 5rem;
+    border-radius: 8px;
+    border: 1px solid lightgray;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.card--back,
+.card--front {
+    box-shadow: 4rem 5rem 2rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* /////////////////////////////////////// */
+/* IMAGES */
+/* /////////////////////////////////////// */
+
+.image--container {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+}
+
+.bg--img {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 35%;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4.8rem;
+}
+
+.card--back {
+    transform: translateX(70%);
+}
+
+.card--content {
+    position: relative;
+}
+
+.card--front {
+    transform: translateX(50%);
+    position: relative;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+    padding: 2.4rem 3rem;
+
+    position: absolute;
+    right: 0;
+    transform: translate(50%);
+}
+
+.card--img--details {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    align-items: center;
+}
+
+.img--number {
+    font-size: 3.1rem;
+    letter-spacing: 2px;
+}
+
+.card--img--details > div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+/* /////////////////////////////////////// */
+/* CARD DETAILS  */
+/* /////////////////////////////////////// */
+
+.form {
+    max-width: 50rem;
+    display: none;
+    grid-template-columns: repeat(4, 10rem);
+    gap: 2.4rem;
+}
+
+.input--container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
+}
+
+.input--container,
+.btn--confirm {
+    grid-column: 1/5;
+}
+
+.mm-yy {
+    flex-direction: row;
+    align-items: top;
+    gap: 1rem;
+}
+
+.exp {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.input__yy,
+.input__mm {
+    width: 9rem;
+}
+
+.mm-yy--inputs {
+    display: flex;
+    gap: 1rem;
+}
+
+.cvc--container {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn--confirm,
+.btn--continue {
+    background-color: hsl(278, 68%, 11%);
+    color: white;
+    font-size: 1.8rem;
+    font-weight: normal;
+}
+/* /////////////////////////////////////// */
+/* SUCCESS MESSAGE  */
+/* /////////////////////////////////////// */
+
+.complete {
+    width: 35rem;
+    display: none;
+    justify-items: center;
+    gap: 1.5rem;
+}
+
+.thanks--message {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--violet);
+    font-weight: 500;
+}
+
+.description {
+    font-size: 1.8rem;
+    color: var(--gray-violet);
+}
+
+/* /////////////////////////////////////// */
+/* ACTIVE STATES  */
+/* /////////////////////////////////////// */
+.error-label {
+    color: var(--red);
+    font-size: 1.2rem;
+    text-transform: none;
+    letter-spacing: none;
+    margin-top: 5px;
+}
+
+.input-error {
+    outline: 1px solid var(--red);
+}
+
+input:focus {
+    outline: 1px solid var(--violet);
+}
+
+.active {
+    display: grid;
+    align-content: center;
+    height: 100%;
+}
