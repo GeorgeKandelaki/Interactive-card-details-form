@@ -1,174 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- displays site properly based on user's device -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
 
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="./images/favicon-32x32.png"
-        />
-        <link rel="stylesheet" href="style.css" />
-        <title>Frontend Mentor | Interactive card details form</title>
+		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
-        <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-        <style>
-            .attribution {
-                font-size: 11px;
-                text-align: center;
-                display: none;
-            }
-            .attribution a {
-                color: hsl(228, 45%, 44%);
-            }
-        </style>
-        <script defer src="index.js"></script>
-    </head>
-    <body>
-        <main class="main-frame">
-            <div class="image--container">
-                <img
-                    src="images/bg-main-desktop.png"
-                    class="bg--img"
-                    alt="image of an card"
-                />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+			rel="stylesheet"
+		/>
 
-                <div class="images">
-                    <div class="card--content">
-                        <div class="content">
-                            <div>
-                                <img
-                                    src="images/card-logo.svg"
-                                    alt="image of an card"
-                                />
-                            </div>
-                            <div class="card--img--details">
-                                <span class="img--number">
-                                    0000 0000 0000 0000</span
-                                >
-                                <div>
-                                    <span class="img--name"
-                                        >Jane Appleseed</span
-                                    >
-                                    <span class="img--exp">
-                                        <span class="img--mm">00</span> /
-                                        <span class="img--yy"> 00</span></span
-                                    >
-                                </div>
-                            </div>
-                        </div>
+		<title>Frontend Mentor | Interactive comments section</title>
 
-                        <img
-                            src="images/bg-card-front.png"
-                            class="card--front"
-                            alt="image of an card"
-                        />
-                    </div>
+		<link rel="stylesheet" href="css/style.css" />
 
-                    <img
-                        src="images/bg-card-back.png"
-                        class="card--back"
-                        alt="image of an card"
-                    />
-                </div>
-            </div>
+		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+		<style>
+			.attribution {
+				font-size: 11px;
+				text-align: center;
+				display: none;
+			}
+			.attribution a {
+				color: hsl(228, 45%, 44%);
+			}
+		</style>
 
-            <div class="card-details">
-                <form class="form active">
-                    <div class="input--container">
-                        <label for="name">Cardholder Name</label>
-                        <input
-                            name="name"
-                            class="input input__name"
-                            placeholder="e.g. Jane Appleseed"
-                            type="text"
-                        />
-                        <label
-                            for="name"
-                            class="error-label error-label-name"
-                        ></label>
-                    </div>
-                    <div class="input--container">
-                        <label for="number">Card Number</label>
-                        <input
-                            name="number"
-                            class="input input__number"
-                            placeholder="e.g. 1234 5678 9123 0000 "
-                            type="number"
-                        />
-                        <label
-                            for="number"
-                            class="error-label error-label-card"
-                        ></label>
-                    </div>
+		<script src="/js/index.js" defer></script>
+	</head>
+	<body>
+		<div class="delete-modal">
+			<h2 class="heading-secondary">Delete Comment</h2>
+			<p class="delete-modal__text">
+				Are you sure you want to delete this comment? This will remove the comment and can't be undone.
+			</p>
 
-                    <div class="input--container mm-yy">
-                        <div class="exp">
-                            <label for="mm-yy--inputs" class="label--exp"
-                                >Exp. Date (MM/YY)</label
-                            >
-                            <div class="mm-yy--inputs">
-                                <input
-                                    name="mm"
-                                    class="input input__mm"
-                                    placeholder="MM"
-                                    type="number"
-                                />
-                                <input
-                                    name="yy"
-                                    class="input input__yy"
-                                    placeholder="YY"
-                                    type="number"
-                                />
-                            </div>
-                            <label
-                                class="error-label error-label-mm-yy"
-                            ></label>
-                        </div>
+			<div class="delete-modal__buttons">
+				<a href="#" class="btn btn-cancel">No, Cancel</a>
+				<a href="#" class="btn btn-delete">Yes, Delete</a>
+			</div>
+		</div>
+		<div class="overlay"></div>
 
-                        <div class="input--container cvc--container">
-                            <label for="cvc">CVC</label>
-                            <input
-                                name="cvc"
-                                class="input input__cvc"
-                                placeholder="e.g. 123"
-                                type="number"
-                            />
-                            <label
-                                for="cvc"
-                                class="error-label error-label-cvc"
-                            ></label>
-                        </div>
-                    </div>
+		<main class="comments">
+			<!-- <div class="comment" id="1">
+				<div class="comment__content">
+					<div class="comment__likes-box">
+						<span class="comment__like">+</span>
+						<span class="comment__likes-quantity">11</span>
+						<span class="comment__dislike">-</span>
+					</div>
 
-                    <button class="btn--confirm">Confirm</button>
-                </form>
+					<div class="comment__user-box">
+						<div class="comment__user-img">
+							<img
+								src="./images/avatars/image-amyrobson.png"
+								alt="Image of an USER"
+							/>
+						</div>
+						<p class="comment__user-name">amyrobson</p>
+						<p class="comment__you">you</p>
+						<p class="comment__post-time">2 weeks ago</p>
+					</div>
 
-                <div class="complete">
-                    <img
-                        src="images/icon-complete.svg"
-                        alt="image of an successfull credit card stealing attempt :)"
-                    />
-                    <h2 class="thanks--message">Thank you!</h2>
-                    <p class="description">We've added your card details</p>
-                    <button class="btn--continue margin-top-md">
-                        Continue
-                    </button>
-                </div>
-            </div>
-            <!-- Completed state start -->
-        </main>
+					<div class="comment__reply-box">
+						<svg
+							width="14"
+							height="13"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M.227 4.316 5.04.16a.657.657 0 0 1 1.085.497v2.189c4.392.05 7.875.93 7.875 5.093 0 1.68-1.082 3.344-2.279 4.214-.373.272-.905-.07-.767-.51 1.24-3.964-.588-5.017-4.829-5.078v2.404c0 .566-.664.86-1.085.496L.227 5.31a.657.657 0 0 1 0-.993Z"
+								fill="#5357B6"
+							/>
+						</svg>
+						Reply
+					</div>
 
-        <div class="attribution">
-            Challenge by
-            <a
-                href="https://www.frontendmentor.io?ref=challenge"
-                target="_blank"
-                >Frontend Mentor</a
-            >. Coded by <a href="#">Your Name Here</a>.
-        </div>
-    </body>
+					<p class="comment__text">
+						Woah, Your Project looks awesome! How long have you been
+						coding for? I'm still new, but think I want to dive into
+						react as wekk soon. Perhaps you can give me an insight
+						on where I can learn React? Thanks!
+					</p>
+				</div>
+
+				<div class="comment__replies"></div>
+			</div> -->
+		</main>
+
+		<div class="create-comment">
+			<img src="/images/avatars/image-amyrobson.png" alt="Image of an CURRENT USER" class="create-comment__img" />
+			<textarea
+				name="new-comment"
+				id="new-comment"
+				class="create-comment__input"
+				placeholder="Add a comment..."
+			></textarea>
+			<a class="btn btn--create">SEND</a>
+		</div>
+		<!-- Pull dynamic content from the data.json file -->
+
+		<div class="attribution">
+			Challenge by
+			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+			<a href="#">Your Name Here</a>.
+		</div>
+	</body>
 </html>
